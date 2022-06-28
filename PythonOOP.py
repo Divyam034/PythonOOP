@@ -116,7 +116,6 @@ print(s2.avg())
 print(Student.get_school())
 Student.info()
 
-"""
 
 
 
@@ -151,3 +150,83 @@ s1.show()
 s2.show()
 
 # s1.lap.show()
+
+
+
+
+# Inheritence
+
+class A:
+    def feature1(self):
+        print("Feature 1 working")
+    def feature2(self):
+        print("Feature 2 working")
+
+class B(A):                     # Single-Level Inheritence B-> A
+    def feature3(self):
+        print("Feature 3 working")
+    def feature4(self):
+        print("Feature 4 working")
+
+class C(B):                     # Multi-Level Inheritence C-> B-> A
+    def feature5(self):
+        print("Feature 5 working")
+
+class D:
+    def feature6(self):
+        print("Fearure 6 is working")
+
+class E(A,D):                   # Multiple Inheritence
+    def feature7(self):
+        print("Feature 7 is working")
+a1 = A()
+b1 = B()
+c1 = C()
+d1 = D()
+e1 = E()
+c1.feature3()
+d1.feature6()
+
+
+
+
+# Constructor in Inheritance and Method Resolution Order (MRO)
+
+class A:
+    def __init__(self):
+        print("init A")
+    def feature1(self):
+        print("feature 1 is working ")
+    def feature2(self):
+        print("feature 2 is working")
+
+
+class B(A):
+    def __init__(self):
+        #super().__init__()
+        print("init B")
+    def feature3(self):
+        print("feature 3 is working")
+    def feature4(self):
+        print("feature 4 is working")
+
+a1 = A()
+b1 = B()
+
+
+
+class C:
+    def feature5(self):
+        print("Fearure 5 working")
+class D(A,C):
+    def __init__(self):
+        print("init D")
+    def feature6(self):
+        print("feature 6 is working")
+    def feat(self):
+        super().feature2()
+
+d1 = D()
+d1.feat()
+
+"""
