@@ -232,3 +232,26 @@ d1.feat()
 """
 
 # Polymorphism
+# Duck Typing
+
+class PyCharm:
+    def execute(self):
+        print("Its compiling")
+        print("Its running")
+
+class MyEditor:
+    def execute(self):
+        print("Its compiling")
+        print("Its running My Editor")
+    
+class Laptop:
+    def code(self, ide):
+        ide.execute()
+
+lap1 = Laptop()
+
+ide = PyCharm()
+ide = MyEditor()
+lap1.code(ide)
+
+
