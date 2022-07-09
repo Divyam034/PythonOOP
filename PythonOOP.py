@@ -161,7 +161,7 @@ class D(A,C):
         super().feature2()
 d1 = D()
 d1.feat()
-"""
+
 
 # Polymorphism
 # Duck Typing
@@ -185,3 +185,87 @@ lap1 = Laptop()
 ide = PyCharm()
 ide = MyEditor()
 lap1.code(ide)
+
+
+
+# Operator Overloading
+
+
+
+
+class Student:
+    def __init__(self, m1, m2):
+        self.m1 = m1
+        self.m2 = m2
+    def __add__(self, other):
+        r1 = self.m1 + other.m1
+        r2 = self.m2 + other.m2
+        return Student(r1, r2)
+    def __str__(self):
+        return f"{self.m1} {self.m2}"
+
+    def __gt__(self, other):
+        if self.m1+self.m2 > other.m1+other.m2:
+            return True
+        else:
+            return False
+
+s1 = Student(50, 69)
+s2 = Student(48, 63)
+s3 = s1+s2
+print(s3.m1, s3.m2)
+
+a = 10
+print(a.__str__())
+print(s3)
+
+if s1>s2:
+    print("S1 wins")
+else:
+    print("S2 wins")
+
+
+"""
+
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+s1 = Student("Abhi")
+print(s1.name)
+
+
+
+
+
+
+class Student_Info:
+    def __init__(self, name, branch, blood):
+        self.name = name
+        self.branch = branch
+        self.blood = blood
+    def collegeInfo(self):
+        return f"The college name of {self.name} is MITS"
+    def _branchInfo(self):                                           # protected method
+        return f"The branch name of {self.name} is {self.branch}"
+    def __student_bloodgrp(self):                                    # Private method
+        return f"Blood Grp of {self.name} is {self.blood}"
+    def details(self):
+        return f"The Details of {self.name} are \n{self.collegeInfo()} \n{self._branchInfo()} \n{self.__student_bloodgrp()}"
+
+
+class Padosi(Student_Info):
+    def __init__(self, name, branch, blood):
+                super().__init__(name, branch, blood)
+    def padosi_knows(self):
+        return f"Padosi Knows: \n {super().collegeInfo()} \n {super()._branchInfo()}"
+
+s1 = Student_Info("aman", "cse", "a+")
+#print(s1.details())
+#print(s1())
+p1 = Padosi("aman", "cse", "a+")
+print(p1.padosi_knows())
+
+
+
+
