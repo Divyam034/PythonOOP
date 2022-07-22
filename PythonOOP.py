@@ -1,4 +1,4 @@
-"""
+
 # Class and Objects
 class Computer:
     def __init__(self, cpu, ram):
@@ -49,6 +49,7 @@ c1.mil = 8
 Car.wheels = 5
 print(c1.comp, c1.mil, c1.wheels)
 print(c2.comp, c2.mil, c2.wheels)
+
 # Types of methods
 class Student:
     school = "Telusko"
@@ -225,8 +226,6 @@ else:
     print("S2 wins")
 
 
-"""
-
 class Student:
     def __init__(self, name):
         self.name = name
@@ -236,7 +235,7 @@ print(s1.name)
 
 
 
-
+# Public, Private, Protected methods and variables
 
 
 class Student_Info:
