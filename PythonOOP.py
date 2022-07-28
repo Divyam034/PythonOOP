@@ -211,7 +211,7 @@ class Student:
         else:
             return False
 
-s1 = Student(50, 69)
+s1 = Student(50, 69)``
 s2 = Student(48, 63)
 s3 = s1+s2
 print(s3.m1, s3.m2)
